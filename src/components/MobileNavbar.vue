@@ -41,12 +41,7 @@ const navItems = [
   {
     name: 'Бойцы',
     path: '/fighters',
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-            <circle cx="9" cy="7" r="4"></circle>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-          </svg>`
+    icon: `<img src="/fightes_icon.svg" alt="Бойцы" width="24" height="24" />`
   },
   {
     name: 'Новости',
@@ -62,9 +57,10 @@ const navItems = [
     name: 'Команда',
     path: '/team',
     icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"></path>
-            <path d="M9.66 13.44C8.81 14.42 7.35 14.9 5.5 14.9c-2.37 0-2.5-1.1-2.5-1.9 0-1.4 1.9-1.9 4-1.9 2.67 0 4.33.83 5 2.5"></path>
-            <path d="M14.34 13.44c.85.98 2.31 1.46 4.16 1.46 2.37 0 2.5-1.1 2.5-1.9 0-1.4-1.9-1.9-4-1.9-2.67 0-4.33.83-5 2.5"></path>
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
           </svg>`
   }
 ];
@@ -129,6 +125,13 @@ nav {
   height: 100%;
 }
 
+.nav-icon img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
 .nav-label {
   font-size: 0.75rem;
   text-align: center;
@@ -145,6 +148,28 @@ nav {
 @supports (padding-bottom: env(safe-area-inset-bottom)) {
   .mobile-navbar {
     padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* Улучшенная мобильная адаптация */
+@media (max-width: 380px) {
+  .nav-item {
+    padding: 6px 0;
+  }
+  
+  .nav-icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .nav-icon img,
+  .nav-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .nav-label {
+    font-size: 0.7rem;
   }
 }
 </style> 

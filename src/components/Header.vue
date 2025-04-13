@@ -2,7 +2,9 @@
   <header>
     <nav class="container">
       <div class="logo">
-        <img src="/dark-horse-logo_white.svg" alt="Dark Horse Logo">
+        <router-link to="/">
+          <img src="/dark-horse-logo_white.svg" alt="Dark Horse Logo">
+        </router-link>
         <span>Dark Horse</span>
       </div>
       
@@ -142,7 +144,7 @@ nav {
 }
 
 .logo img {
-  height: 40px;
+  height: 80px;
   width: auto;
 }
 

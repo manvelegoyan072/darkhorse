@@ -1,22 +1,37 @@
 <template>
   <div id="app">
-    <Header />
-    <main class="main-content">
-      <router-view v-slot="{ Component }">
-        <transition name="fade" mode="out-in">
-          <component :is="Component" />
-        </transition>
-      </router-view>
-    </main>
-    <Footer />
-    <MobileNavbar />
+    <template v-if="!isAdminRoute">
+      <Header />
+      <main class="main-content">
+        <router-view v-slot="{ Component }">
+          <transition name="fade" mode="out-in">
+            <component :is="Component" />
+          </transition>
+        </router-view>
+      </main>
+      <Footer />
+      <MobileNavbar />
+    </template>
+    
+    <template v-else>
+      <router-view />
+    </template>
   </div>
 </template>
 
 <script setup>
+import { computed } from 'vue';
+import { useRoute } from 'vue-router';
 import Header from './components/Header.vue';
 import Footer from './components/Footer.vue';
 import MobileNavbar from './components/MobileNavbar.vue';
+
+const route = useRoute();
+
+// Проверяем, является ли текущий маршрут админским
+const isAdminRoute = computed(() => {
+  return route.meta.layout === 'admin' || route.path === '/admin/login';
+});
 </script>
 
 <style>

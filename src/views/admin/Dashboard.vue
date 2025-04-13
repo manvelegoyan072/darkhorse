@@ -414,7 +414,7 @@ function formatDate(date) {
   align-items: center;
   justify-content: center;
   gap: 12px;
-  color: var(--text-color, #1e1e2d);
+  color: #121212;
   text-decoration: none;
   transition: all 0.2s ease;
 }
@@ -431,12 +431,14 @@ function formatDate(date) {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #121212;
 }
 
 .action-title {
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 600;
   text-align: center;
+  color: #121212;
 }
 
 @media (max-width: 992px) {
