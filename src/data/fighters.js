@@ -1,6 +1,6 @@
 export const fighters = [
   {
-    "name": "Алексе́й Илье́нко",
+    "name": "Алексей Ильенко",
     "nickname": "Phenomenal",
     "image": "/fighters/Aleksey_Ilyenko.png",
     "url": "/fighters/aleksey_ilyenko",
@@ -909,7 +909,7 @@ export const fighters = [
     ]
   },
   {
-    "name": "Асла́н Ора́з",
+    "name": "Аслан Ораз",
     "nickname": "JOKER",
     "image": "/fighters/Aslan_Oraz.png",
     "url": "/fighters/aslan_oraz",
@@ -1060,6 +1060,6 @@ export const countryFlags = {
   "kyrgyzstan": "/flags/kyrgyzstan.jpg",
   "kazakhstan": "/flags/kazakhstan.jpg",
   "usa": "/flags/usa.jpg",
-  "ireland": "/flags/ireland.png",
-  "nigeria": "/flags/nigeria.png"
+  "ireland": "/flags/usa.jpg",
+  "nigeria": "/flags/usa.jpg"
 };

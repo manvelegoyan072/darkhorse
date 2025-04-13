@@ -5,6 +5,11 @@
   --accent-color: #404040;
   --text-color: #e0e0e0;
   --bg-color: #1c1c1c;
+  
+  /* Переменные для текста на светлом фоне */
+  --text-dark: #1e1e2d;
+  --text-dark-secondary: #2d3748;
+  --text-dark-muted: #4a5568;
 }
 
 * {

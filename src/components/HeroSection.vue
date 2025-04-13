@@ -69,18 +69,23 @@ export default {
 }
 
 .cta-button {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 15px 30px;
   background-color: var(--accent-color);
   color: var(--primary-color);
   text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .cta-button:hover {
-  background-color: #505050;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {
