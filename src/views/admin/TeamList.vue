@@ -271,9 +271,10 @@ onMounted(() => {
 }
 
 .page-header h1 {
-  margin: 0;
   font-size: 1.8rem;
-  color: var(--text-color, #1e1e2d);
+  margin: 0;
+  color: #111111;
+  font-weight: 600;
 }
 
 .icon-plus {

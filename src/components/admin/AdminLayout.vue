@@ -152,7 +152,7 @@
       <header class="admin-header">
         <div class="breadcrumb">
           <router-link to="/admin/dashboard">Админка</router-link>
-          <span v-if="currentPageTitle"> / {{ currentPageTitle }}</span>
+          <span v-if="currentPageTitle" class="breadcrumb-title"> / {{ currentPageTitle }}</span>
         </div>
         
         <div class="user-menu">
@@ -409,27 +409,49 @@ onUnmounted(() => {
   justify-content: space-between;
   height: 24px;
   width: 30px;
+  position: relative;
+  z-index: 1200;
 }
 
 .burger-menu span {
   display: block;
   height: 3px;
   width: 100%;
-  background-color: var(--text-dark, #1e1e2d);
+  background-color: #121212;
   border-radius: 2px;
   transition: all 0.3s ease;
+  position: absolute;
+  left: 0;
+}
+
+.burger-menu span:nth-child(1) {
+  top: 2px;
+  transform-origin: center;
+}
+
+.burger-menu span:nth-child(2) {
+  top: 10px;
+  transform-origin: center;
+}
+
+.burger-menu span:nth-child(3) {
+  top: 18px;
+  transform-origin: center;
 }
 
 .burger-menu.is-active span:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
+  top: 10px;
+  transform: rotate(45deg);
 }
 
 .burger-menu.is-active span:nth-child(2) {
   opacity: 0;
+  transform: translateX(-20px);
 }
 
 .burger-menu.is-active span:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
+  top: 10px;
+  transform: rotate(-45deg);
 }
 
 /* Мобильное меню */
@@ -511,8 +533,8 @@ onUnmounted(() => {
 }
 
 .mobile-nav-item.router-link-active {
-  color: var(--primary-color, #4F46E5);
-  background-color: rgba(79, 70, 229, 0.1);
+  color: #1e1e2d;
+  background-color: rgba(30, 30, 45, 0.08);
 }
 
 .mobile-nav-icon {
@@ -546,7 +568,7 @@ onUnmounted(() => {
   }
   
   .admin-sidebar {
-    display: none;
+    display: none !important; /* Force hide sidebar on mobile */
   }
   
   .admin-content {
@@ -715,16 +737,26 @@ onUnmounted(() => {
   align-items: center;
   font-size: 0.9rem;
   color: var(--text-dark-muted, #4a5568);
+  max-width: 60%;
+  overflow: hidden;
 }
 
 .breadcrumb a {
   color: var(--text-dark-secondary, #2d3748);
   text-decoration: none;
   transition: color 0.2s ease;
+  white-space: nowrap;
 }
 
 .breadcrumb a:hover {
   color: var(--primary-color, #4F46E5);
+}
+
+.breadcrumb-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 250px;
 }
 
 .user-menu {
@@ -816,6 +848,7 @@ onUnmounted(() => {
 .page-header h1 {
   margin: 0;
   font-size: 1.8rem;
-  color: var(--text-dark, #1e1e2d);
+  color: #111111;
+  font-weight: 600;
 }
 </style> 

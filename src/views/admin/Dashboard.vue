@@ -227,7 +227,8 @@ function formatDate(date) {
 .page-header h1 {
   font-size: 1.8rem;
   margin: 0;
-  color: var(--text-dark, #1e1e2d);
+  color: #111111;
+  font-weight: 600;
 }
 
 .last-updated {
